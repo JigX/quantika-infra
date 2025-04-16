@@ -1,6 +1,14 @@
+- name: Ensure mount directory exists
+  file:
+    path: /mnt/media
+    state: directory
+
 - name: Mount USB drive
   mount:
     path: /mnt/media
-    src: /dev/sdb1
-    fstype: ext4
+    src: /dev/sda1
+    fstype: xfs
+    opts: defaults
+    dump: 0
+    passno: 2
     state: mounted
