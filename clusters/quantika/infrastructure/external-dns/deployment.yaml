@@ -13,6 +13,7 @@ spec:
       labels:
         app: external-dns
     spec:
+      progressDeadlineSeconds: 60
       serviceAccountName: external-dns
       containers:
         - name: external-dns
