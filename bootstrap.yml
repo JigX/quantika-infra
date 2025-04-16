@@ -1,0 +1,13 @@
+- hosts: master
+  become: true
+
+  pre_tasks:
+    - name: 🔍 TEST | Is github_token zichtbaar in playbook?
+      debug:
+        msg: "Vault token is: {{ github_token | default('❌ NOT FOUND') }}"
+
+  roles:
+    - common
+    - storage
+    - k3s-master
+    - flux

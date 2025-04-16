@@ -1,0 +1,16 @@
+- name: Debug Ansible variable loading
+  hosts: master
+  gather_facts: false
+
+  tasks:
+    - name: Toon hostname var
+      debug:
+        msg: "Hostname = {{ hostname | default('❌ Niet gevonden') }}"
+
+    - name: Toon media_path var
+      debug:
+        msg: "Media path = {{ media_path | default('❌ Niet gevonden') }}"
+
+    - name: Toon github_token var
+      debug:
+        msg: "GitHub Token = {{ github_token | default('❌ Niet gevonden') }}"
