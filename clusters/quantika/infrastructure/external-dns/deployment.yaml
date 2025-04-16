@@ -20,7 +20,7 @@ spec:
           args:
             - --source=service
             - --source=ingress
-            - --domain-filter=example.com  # Vervang dit met je echte domein
+            - --domain-filter=indeweygerlings.com  # Vervang dit met je echte domein
             - --provider=cloudflare
             - --cloudflare-proxied
             - --policy=sync
