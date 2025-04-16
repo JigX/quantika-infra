@@ -6,3 +6,7 @@ resources:
   - namespace.yaml
   - deployment.yaml
   - secret.sops.yaml
+generators:
+  - ksops-generator.yaml
+generatorOptions:
+  disableNameSuffixHash: true
