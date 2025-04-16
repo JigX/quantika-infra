@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - flux-system
   - infrastructure/external-dns
+  - apps/nginx-test
