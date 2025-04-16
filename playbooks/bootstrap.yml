@@ -1,0 +1,6 @@
+- hosts: master
+  become: true
+  roles:
+    - common
+    - storage
+    - k3s-master

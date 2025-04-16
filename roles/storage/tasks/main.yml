@@ -1,0 +1,6 @@
+- name: Mount USB drive
+  mount:
+    path: /mnt/media
+    src: /dev/sdb1
+    fstype: ext4
+    state: mounted

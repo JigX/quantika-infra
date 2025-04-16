@@ -1,0 +1,5 @@
+- hosts: master
+  become: true
+  tasks:
+    - name: Deploy apps
+      shell: kubectl apply -f /home/ubuntu/manifests/
