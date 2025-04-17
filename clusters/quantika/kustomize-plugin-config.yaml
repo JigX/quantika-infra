@@ -1,0 +1,6 @@
+apiVersion: config.kustomize.dev/v1beta1
+kind: PluginConfig
+metadata:
+  name: ksops-config
+generators:
+  - path: ../bin/ksops

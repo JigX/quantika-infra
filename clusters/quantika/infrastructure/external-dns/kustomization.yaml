@@ -7,6 +7,4 @@ resources:
   - deployment.yaml
   - secret.sops.yaml
 generators:
-  - ksops-generator.yaml
-generatorOptions:
-  disableNameSuffixHash: true
+  - secret.sops.yaml
