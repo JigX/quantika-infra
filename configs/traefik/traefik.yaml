@@ -1,4 +1,3 @@
-configs/traefik/traefik.yml
 entryPoints:
   web:
     address: ":80"
