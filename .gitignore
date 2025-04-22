@@ -4,3 +4,4 @@ __pycache__/
 .vault_pass.txt
 .DS_Store
 .vscode
+cloudflare/credentials.env
