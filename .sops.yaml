@@ -1,0 +1,5 @@
+creation_rules:
+  - path_regex: secrets/encrypted/.*\.ya?ml$
+    encrypted_regex: ^(data|stringData)$
+    age: age1j3xckn88kf6q3lkq37tkgsr2l50j0e8e0d7ckn962v5sw2ddsvqqrry9v5
+    format: yaml
