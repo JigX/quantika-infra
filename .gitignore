@@ -3,3 +3,4 @@ __pycache__/
 *.log
 .vault_pass.txt
 .DS_Store
+.vscode

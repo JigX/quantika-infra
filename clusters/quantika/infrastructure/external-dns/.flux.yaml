@@ -1,5 +1,0 @@
-version: 1
-patches:
-  - path: ksops-decrypt.yaml
-    target:
-      kind: Kustomization

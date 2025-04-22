@@ -1,5 +1,0 @@
-- name: Update & install packages
-  apt:
-    name: [curl, git, unzip, nfs-common]
-    update_cache: yes
-    state: present
