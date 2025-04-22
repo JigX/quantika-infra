@@ -1,19 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
+generatorOptions:
+  disableNameSuffixHash: true
+generators:
+- infrastructure/external-dns/secret.sops.yaml
 kind: Kustomization
-metadata:
-  name: quantika
-  namespace: flux-system
-spec:
-  interval: 5m0s
-  path: ./clusters/quantika
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-age
-  targetNamespace: flux-system
-  wait: true
-  timeout: 2m
+resources:
+- flux-system
+- infrastructure/external-dns
+- apps/nginx
