@@ -1,0 +1,12 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cert-manager-namespace
+  namespace: flux-system
+spec:
+  interval: 5m
+  path: ./infra/cert-manager/namespace.yaml
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
