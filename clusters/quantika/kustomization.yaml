@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
   - ../../infra/cert-manager/issuer.yaml
   - ../../secrets/cloudflare/cloudflare-dns-token-sealed.yaml
+  - ../../infra/cert-manager/helm-repository.yaml
+  - ../../infra/cert-manager/helm-release.yaml
