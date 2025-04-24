@@ -18,13 +18,11 @@ spec:
   values:
     provider: cloudflare
     extraEnvVars:
-      - name: CF_API_KEY
+      - name: CF_DNS_API_TOKEN
         valueFrom:
           secretKeyRef:
             name: cloudflare-dns-token
             key: api-token
-      - name: CF_API_EMAIL
-        value: sdkbzq8bqr@privaterelay.appleid.com
     policy: sync
     txtOwnerId: "quantika"
     domainFilters:
