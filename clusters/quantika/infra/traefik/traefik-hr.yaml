@@ -46,7 +46,7 @@ spec:
               - "1.1.1.1:53"
               - "1.0.0.1:53"
     env:
-      - name: CF_DNS_API_TOKEN
+      - name: CF_API_TOKEN
         valueFrom:
           secretKeyRef:
             name: cloudflare-dns-token
