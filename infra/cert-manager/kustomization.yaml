@@ -5,5 +5,5 @@ namespace: cert-manager
 
 resources:
   - namespace.yaml
-  - cert-manager-hr.yaml
   - cert-manager-repo.yaml
+  - cert-manager-hr.yaml
