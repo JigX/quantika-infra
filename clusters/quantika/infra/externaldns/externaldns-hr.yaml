@@ -23,6 +23,8 @@ spec:
           secretKeyRef:
             name: cloudflare-dns-token
             key: api-token
+      - name: CF_EMAIL
+        value: sdkbzq8bqr@privaterelay.appleid.com
     policy: sync
     txtOwnerId: "quantika"
     domainFilters:
