@@ -17,10 +17,12 @@ spec:
     createNamespace: false
   values:
     provider: cloudflare
-    cloudflare:
-      apiTokenSecret:
-        name: cloudflare-dns-token
-        key: api-token
+    extraEnvVars:
+      - name: CF_DNS_API_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: cloudflare-dns-token
+            key: api-token
     policy: sync
     txtOwnerId: "quantika"
     domainFilters:
