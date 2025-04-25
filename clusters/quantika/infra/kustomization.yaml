@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - ../secrets/cloudflare/cloudflare-dns-token-sealed.yaml
+  - ../secrets/standard/standard-secret.yaml
   - externaldns
   - sealed-secrets
   - cert-manager

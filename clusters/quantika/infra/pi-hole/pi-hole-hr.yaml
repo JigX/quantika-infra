@@ -1,0 +1,36 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pi-hole
+  namespace: kube-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: pi-hole
+      version: "5.12.1"
+      sourceRef:
+        kind: HelmRepository
+        name: pi-hole
+        namespace: flux-system
+  install:
+    createNamespace: true
+  values:
+    webPassword:
+      valueFrom:
+        secretKeyRef:
+          name: standard-secret
+          key: password  # Haalt het wachtwoord op uit het Secret
+    dns:
+      localDNS: 
+        enabled: true
+        address: "192.168.50.200"  # Het IP van je Kubernetes Master Node (of ander lokaal IP)
+    service:
+      type: ClusterIP  # We willen dat de DNS service intern beschikbaar is via ClusterIP
+    ingress:
+      enabled: true
+      annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /
+      host: pihole.indeweygerlings.com  # Pi-hole webportal is beschikbaar via deze FQDN
+      paths:
+        - /

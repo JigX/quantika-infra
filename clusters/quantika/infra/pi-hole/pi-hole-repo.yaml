@@ -1,0 +1,7 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRepository
+metadata:
+  name: pi-hole
+  namespace: flux-system
+spec:
+  url: https://pi-hole.github.io/helm-charts
