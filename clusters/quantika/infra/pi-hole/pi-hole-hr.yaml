@@ -30,6 +30,7 @@ spec:
       enabled: true
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /
+        external-dns.alpha.kubernetes.io/owner-id: "quantika"  # Added owner-id annotation
       host: pihole.indeweygerlings.com  # Pi-hole web portal is available via this FQDN
       paths:
         - /
