@@ -26,11 +26,12 @@ spec:
         address: "192.168.50.200"  # The IP of your Kubernetes Master Node (or other local IP)
     service:
       type: ClusterIP  # The DNS service should be internally available via ClusterIP
-    ingress:
-      enabled: true
-      annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /
-        external-dns.alpha.kubernetes.io/owner-id: "quantika"  # Added owner-id annotation
-      host: pihole.indeweygerlings.com  # Pi-hole web portal is available via this FQDN
-      paths:
-        - /
+  ingress:
+    enabled: true
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      external-dns.alpha.kubernetes.io/hostname: pihole.indeweygerlings.com  # Make sure external-dns picks up the hostname
+      external-dns.alpha.kubernetes.io/owner-id: "quantika"  # Ensure owner-id matches with ExternalDNS setup
+    host: pihole.indeweygerlings.com  # Pi-hole web portal is available via this FQDN
+    paths:
+      - /
