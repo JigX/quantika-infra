@@ -7,11 +7,11 @@ spec:
   interval: 10m
   chart:
     spec:
-      chart: pi-hole
-      version: "5.12.1"
+      chart: pihole  # Correct chart name for Bitnami's Pi-hole
+      version: "12.0.0"  # Ensure you use a valid version
       sourceRef:
         kind: HelmRepository
-        name: pi-hole
+        name: pi-hole  # Name of your HelmRepository resource
         namespace: flux-system
   install:
     createNamespace: true
@@ -20,17 +20,17 @@ spec:
       valueFrom:
         secretKeyRef:
           name: standard-secret
-          key: password  # Haalt het wachtwoord op uit het Secret
+          key: password  # Fetches the password from the Secret
     dns:
       localDNS: 
         enabled: true
-        address: "192.168.50.200"  # Het IP van je Kubernetes Master Node (of ander lokaal IP)
+        address: "192.168.50.200"  # The IP of your Kubernetes Master Node (or other local IP)
     service:
-      type: ClusterIP  # We willen dat de DNS service intern beschikbaar is via ClusterIP
+      type: ClusterIP  # The DNS service should be internally available via ClusterIP
     ingress:
       enabled: true
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /
-      host: pihole.indeweygerlings.com  # Pi-hole webportal is beschikbaar via deze FQDN
+      host: pihole.indeweygerlings.com  # Pi-hole web portal is available via this FQDN
       paths:
         - /
