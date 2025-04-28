@@ -4,5 +4,5 @@ metadata:
   name: pi-hole
   namespace: flux-system
 spec:
-  url: https://savepointsam.github.io/charts
+  url: https://mojo2600.github.io/pihole-kubernetes/
   interval: 10m
