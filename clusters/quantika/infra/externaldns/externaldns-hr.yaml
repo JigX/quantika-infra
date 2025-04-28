@@ -31,3 +31,5 @@ spec:
     sources:
       - ingress
     logLevel: debug
+    podLabels:  # Add this section to label the pods
+      app: external-dns
