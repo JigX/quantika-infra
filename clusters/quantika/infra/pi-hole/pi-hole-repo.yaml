@@ -4,5 +4,5 @@ metadata:
   name: pi-hole
   namespace: flux-system
 spec:
-  url: https://pi-hole.github.io/helm-charts  # The official Pi-hole Helm chart repository
+  url: https://charts.bitnami.com/bitnami
   interval: 10m
