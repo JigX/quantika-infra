@@ -1,17 +1,17 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pi-hole
+  name: pihole
   namespace: kube-system
 spec:
   interval: 10m
   chart:
     spec:
-      chart: pihole  # Correct chart name for Bitnami's Pi-hole
+      chart: savepointsam/pihole
       version: "12.0.0"  # Ensure you use a valid version
       sourceRef:
         kind: HelmRepository
-        name: pi-hole  # Name of your HelmRepository resource
+        name: pihole
         namespace: flux-system
   install:
     createNamespace: true

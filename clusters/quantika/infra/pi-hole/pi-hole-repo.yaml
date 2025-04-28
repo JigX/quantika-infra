@@ -4,5 +4,5 @@ metadata:
   name: pi-hole
   namespace: flux-system
 spec:
-  url: https://charts.bitnami.com/bitnami
+  url: https://savepointsam.github.io/charts
   interval: 10m
