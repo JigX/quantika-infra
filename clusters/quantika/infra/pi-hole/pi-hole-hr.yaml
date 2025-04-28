@@ -7,10 +7,10 @@ spec:
   interval: 10m
   chart:
     spec:
-      chart: pi-hole
+      chart: pihole
       sourceRef:
         kind: HelmRepository
-        name: pihole
+        name: pi-hole
         namespace: flux-system
   install:
     createNamespace: true
