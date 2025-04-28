@@ -4,7 +4,7 @@ metadata:
   name: pi-hole
   namespace: flux-system
 spec:
-  chart: pi-hole   # This should be a string
+  chart: pi-hole  # This should be a string, not an object
   version: "5.12.1"
   sourceRef:
     kind: HelmRepository
