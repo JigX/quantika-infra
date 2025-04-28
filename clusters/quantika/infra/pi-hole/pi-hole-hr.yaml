@@ -33,6 +33,6 @@ spec:
         external-dns.alpha.kubernetes.io/hostname: pihole.indeweygerlings.com  # Ensure this is set to the correct hostname
         external-dns.alpha.kubernetes.io/owner-id: "quantika"  # Ensure owner-id matches with ExternalDNS setup
         external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"  # Optionally enable Cloudflare proxying
-      host: pihole.indeweygerlings.com  # Ensure this is set to the correct hostname
+      hosts: pihole.indeweygerlings.com  # Ensure this is set to the correct hostname
       paths:
         - /
