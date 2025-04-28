@@ -9,3 +9,4 @@ spec:
   sourceRef:
     kind: HelmRepository
     name: pi-hole
+  interval: 10m # Specify the interval (10 minutes in this case)
