@@ -18,6 +18,8 @@ spec:
   values:
     deployment:
       enabled: true
+    podLabels:
+      app: traefik
     service:
       type: LoadBalancer
     ingressRoute:
