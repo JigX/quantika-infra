@@ -27,6 +27,7 @@ spec:
     service:
       type: ClusterIP  # The DNS service should be internally available via ClusterIP
     ingress:
+      ingressClassName: traefik
       enabled: true
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /
