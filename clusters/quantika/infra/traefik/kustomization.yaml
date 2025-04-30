@@ -4,3 +4,4 @@ resources:
   - traefik-repo.yaml
   - traefik-hr.yaml
   - middlewares.yaml
+  - traefik-dashboard.yaml
