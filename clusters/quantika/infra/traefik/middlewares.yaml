@@ -7,3 +7,14 @@ spec:
   headers:
     customRequestHeaders:
       X-Forwarded-Proto: "https"
+
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: traefik-dashboard-auth
+  namespace: kube-system
+spec:
+  basicAuth:
+    users:
+      - "admin:$apr1$kT/.ZKpT$K6gWTXc2UuTtIUFeNdZVJ1"
