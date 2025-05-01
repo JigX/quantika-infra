@@ -53,7 +53,7 @@ spec:
       - name: CF_API_TOKEN
         valueFrom:
           secretKeyRef:
-            name: cloudflare-dns-token
+            name: cloudflare-api-token
             key: api-token
     additionalArguments:
       - "--certificatesresolvers.cloudflare.acme.dnschallenge=true"
