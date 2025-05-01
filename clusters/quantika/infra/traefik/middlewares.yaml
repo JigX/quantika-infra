@@ -15,4 +15,4 @@ metadata:
   namespace: kube-system
 spec:
   basicAuth:
-    secret: standard-secret
+    secret: traefik-dashboard
