@@ -22,6 +22,8 @@ spec:
       app: traefik
     service:
       type: LoadBalancer
+      externalUPs:
+        - 213.10.116.223
       annotations:
         external-dns.alpha.kubernetes.io/hostname: "traefik.indeweygerlings.com"
         external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
