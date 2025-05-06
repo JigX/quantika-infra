@@ -25,7 +25,14 @@ spec:
         enabled: true
         address: "192.168.50.200"  # The IP of your Kubernetes Master Node (or other local IP)
     service:
-      type: ClusterIP  # The DNS service should be internally available via ClusterIP
+      type: NodePort
+      ports:
+        web:
+          port: 80
+          nodePort: 31080  # De poort die je wilt gebruiken op de node
+        websecure:
+          port: 443
+          nodePort: 31443  # De poort die je wilt gebruiken op de node
     ingress:
       ingressClassName: traefik
       enabled: true

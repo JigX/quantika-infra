@@ -21,9 +21,17 @@ spec:
     podLabels:
       app: traefik
     service:
-      type: LoadBalancer
-      externalUPs:
+      type: NodePort
+      externalIPs:
+        - 192.168.50.200
         - 213.10.116.223
+      ports:
+        web:
+          port: 80
+          nodePort: 30080
+        websecure:
+          port: 443
+          nodePort: 30443
       annotations:
         external-dns.alpha.kubernetes.io/hostname: "traefik.indeweygerlings.com"
         external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
