@@ -26,6 +26,8 @@ spec:
         address: "192.168.50.200"  # The IP of your Kubernetes Master Node (or other local IP)
     service:
       type: NodePort
+      externalIPs:
+        - 213.10.116.223
       ports:
         web:
           port: 80
