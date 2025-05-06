@@ -31,6 +31,8 @@ spec:
     sources:
       - ingress
       - service
+    extraArgs:
+      - --default-targets=213.10.116.223
     logLevel: trace
-    podLabels:  # Add this section to label the pods
+    podLabels:
       app: external-dns
