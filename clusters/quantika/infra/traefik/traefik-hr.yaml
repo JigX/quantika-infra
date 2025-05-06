@@ -23,10 +23,15 @@ spec:
     service:
       type: LoadBalancer
       externalIPs:
-        - 213.10.116.223
+        - 213.10.116.223  # Het externe IP adres van je LoadBalancer
     ingressRoute:
       dashboard:
         enabled: true
+        entryPoints:
+          - traefik  # Zorg ervoor dat traefik een ingress point heeft om toegang te geven
+        matchRule: PathPrefix(`/dashboard`) || PathPrefix(`/api`)  # Zorg ervoor dat dit de juiste URL is voor het dashboard
+        tls:
+          certResolver: cloudflare  # TLS met je Cloudflare configuratie
     ports:
       web:
         redirectTo: websecure

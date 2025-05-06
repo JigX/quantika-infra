@@ -4,17 +4,17 @@ metadata:
   name: traefik-dashboard
   namespace: kube-system
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: traefik.indeweygerlings.com
-    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"  # Proxy via Cloudflare, kan worden weggelaten als je geen proxy wilt gebruiken
+    external-dns.alpha.kubernetes.io/hostname: traefik.indeweygerlings.com  # Zorg ervoor dat dit de juiste hostname is
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"  # Optioneel: Proxy via Cloudflare
 spec:
   rules:
-  - host: traefik.indeweygerlings.com
-    http:
-      paths:
-      - path: /dashboard
-        pathType: Prefix
-        backend:
-          service:
-            name: traefik
-            port:
-              number: 9000
+    - host: traefik.indeweygerlings.com  # De juiste domeinnaam voor je dashboard
+      http:
+        paths:
+          - path: /dashboard
+            pathType: Prefix
+            backend:
+              service:
+                name: traefik
+                port:
+                  number: 9000  # Zorg ervoor dat de juiste poort voor je dashboard hier is
