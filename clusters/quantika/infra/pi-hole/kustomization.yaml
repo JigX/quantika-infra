@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - pi-hole-repo.yaml
   - pi-hole-hr.yaml
+  - test-ingress.yaml
