@@ -24,9 +24,6 @@ spec:
       type: LoadBalancer
       externalIPs:
         - 213.10.116.223
-      annotations:
-        external-dns.alpha.kubernetes.io/hostname: "traefik.indeweygerlings.com"
-        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
     ingressRoute:
       dashboard:
         enabled: true
