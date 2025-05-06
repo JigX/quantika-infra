@@ -25,16 +25,9 @@ spec:
         enabled: true
         address: "192.168.50.200"  # The IP of your Kubernetes Master Node (or other local IP)
     service:
-      type: NodePort
+      type: LoadBalancer
       externalIPs:
         - 213.10.116.223
-      ports:
-        web:
-          port: 80
-          nodePort: 31080  # De poort die je wilt gebruiken op de node
-        websecure:
-          port: 443
-          nodePort: 31443  # De poort die je wilt gebruiken op de node
     ingress:
       ingressClassName: traefik
       enabled: true
