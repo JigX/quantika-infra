@@ -18,6 +18,13 @@ spec:
   values:
     deployment:
       enabled: true
+      additionalVolumeMounts:
+        - name: traefik-data
+          mountPath: /data
+    additionalVolumes:
+      - name: traefik-data
+        persistentVolumeClaim:
+          claimName: traefik-acme-pvc
     podLabels:
       app: traefik
     service:
