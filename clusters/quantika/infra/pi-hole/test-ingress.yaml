@@ -14,6 +14,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: external-ip-dummy
+                name: traefik
                 port:
                   number: 80

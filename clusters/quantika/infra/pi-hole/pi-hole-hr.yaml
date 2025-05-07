@@ -19,23 +19,22 @@ spec:
       valueFrom:
         secretKeyRef:
           name: standard-secret
-          key: password  # Fetches the password from the Secret
+          key: password
     dns:
       localDNS:
         enabled: true
-        address: "192.168.50.200"  # The IP of your Kubernetes Master Node (or other local IP)
+        address: "192.168.50.200"
     service:
-      type: LoadBalancer
-      externalIPs:
-        - 213.10.116.223
+      type: ClusterIP  # ← LoadBalancer eruit, intern benaderbaar
     ingress:
       ingressClassName: traefik
       enabled: true
       annotations:
-        external-dns.alpha.kubernetes.io/hostname: pihole.indeweygerlings.com  # Ensure this is set to the correct hostname
-        external-dns.alpha.kubernetes.io/owner-id: "quantika"  # Ensure owner-id matches with ExternalDNS setup
-        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"  # Optionally enable Cloudflare proxying
+        external-dns.alpha.kubernetes.io/hostname: pihole.indeweygerlings.com
+        external-dns.alpha.kubernetes.io/owner-id: "quantika"
+        external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+        external-dns.alpha.kubernetes.io/target: "213.10.116.223"  # ← WAN IP hier toevoegen
       hosts:
-        - pihole.indeweygerlings.com  # Ensure this is set to the correct hostname
+        - pihole.indeweygerlings.com
       paths:
         - /
