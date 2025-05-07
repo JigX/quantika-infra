@@ -41,7 +41,7 @@ spec:
       hosts:
         - pihole.indeweygerlings.com
       paths:
-        - /
+        - /admin
       tls:
         - hosts:
             - pihole.indeweygerlings.com
