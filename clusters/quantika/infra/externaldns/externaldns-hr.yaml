@@ -30,6 +30,7 @@ spec:
       - 4nn1k4.com
     sources:
       - ingress
-    logLevel: trace
+      - service
+    logLevel: debug
     podLabels:
       app: external-dns
