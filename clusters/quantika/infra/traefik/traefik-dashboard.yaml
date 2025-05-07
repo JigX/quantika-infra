@@ -15,6 +15,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: traefik
+                name: external-ip-dummy
                 port:
                   number: 9000  # Zorg ervoor dat de juiste poort voor je dashboard hier is
