@@ -4,4 +4,3 @@ kind: Kustomization
 resources:
   - externaldns-repo.yaml
   - externaldns-hr.yaml
-  - dummy-lb-service.yaml
