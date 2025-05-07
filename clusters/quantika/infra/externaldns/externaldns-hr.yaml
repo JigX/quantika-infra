@@ -30,8 +30,6 @@ spec:
       - 4nn1k4.com
     sources:
       - ingress
-    extraArgs:
-      - --external-ip-address=213.10.116.223
     logLevel: trace
     podLabels:
       app: external-dns
