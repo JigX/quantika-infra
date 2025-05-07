@@ -1,12 +1,3 @@
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: rancher
-  namespace: flux-system
-spec:
-  interval: 1h
-  url: https://charts.rancher.io
----
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
@@ -14,14 +5,6 @@ metadata:
   namespace: kube-system
 spec:
   interval: 10m
-  chart:
-    spec:
-      chart: local-path-provisioner
-      version: 0.0.31
-      sourceRef:
-        kind: HelmRepository
-        name: bitnami
-        namespace: flux-system
   values:
     path: /mnt/media/k8s
     storageClass:
