@@ -30,9 +30,10 @@ spec:
       - 4nn1k4.com
     sources:
       - ingress
+      - service
     extraArgs:
-      - --external-ip-address=213.10.116.223
       - --annotation-filter=""
-    logLevel: trace
+      - --publish-internal-services
+    logLevel: debug  # 'trace' is vaak iets te veel output
     podLabels:
       app: external-dns
