@@ -4,8 +4,14 @@ metadata:
   name: test-ingress
   namespace: default
   annotations:
-    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.tls.certresolver: cloudflare
+    external-dns.alpha.kubernetes.io/hostname: test.indeweygerlings.com
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+    external-dns.alpha.kubernetes.io/owner-id: "quantika"
 spec:
+  ingressClassName: traefik
   rules:
     - host: test.indeweygerlings.com
       http:
@@ -14,6 +20,9 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: traefik
+                name: kubernetes
                 port:
-                  number: 80
+                  number: 443
+  tls:
+    - hosts:
+        - test.indeweygerlings.com
