@@ -10,6 +10,7 @@ metadata:
     external-dns.alpha.kubernetes.io/hostname: test.indeweygerlings.com
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
     external-dns.alpha.kubernetes.io/owner-id: "quantika"
+    external-dns.alpha.kubernetes.io/target: "213.10.116.223"  # ← WAN IP hier toevoegen
 spec:
   ingressClassName: traefik
   rules:
