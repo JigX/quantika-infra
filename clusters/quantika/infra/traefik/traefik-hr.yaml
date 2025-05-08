@@ -74,5 +74,3 @@ spec:
       - "--certificatesresolvers.cloudflare.acme.storage=/data/acme.json"
       - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
-      - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
-      - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
