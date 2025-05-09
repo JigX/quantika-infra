@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
   - pvc.yaml
   - traefik-repo.yaml
-  - traefik-hr.yaml
   - middlewares.yaml
+  - traefik-hr.yaml
   - traefik-dashboard.yaml
