@@ -16,6 +16,8 @@ spec:
   install:
     createNamespace: true
   values:
+    api:
+      dashboard: true
     deployment:
       enabled: true
       additionalVolumeMounts:
