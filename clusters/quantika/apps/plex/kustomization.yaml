@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - plex-hr.yaml
+  - plex-repo.yaml
+  - plex-ingress.yaml
+  - plex-pvc.yaml
+  - plex-service.yaml
