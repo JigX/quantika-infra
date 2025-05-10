@@ -44,8 +44,8 @@ spec:
         protocol: TCP
         tls:
           enabled: true
-        traefik:
-      port: 9000
+      traefik:
+        port: 9000
         expose: true
         exposedPort: 9000
         protocol: TCP
