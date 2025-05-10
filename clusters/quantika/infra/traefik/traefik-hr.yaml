@@ -16,8 +16,6 @@ spec:
   install:
     createNamespace: true
   values:
-    api:
-      dashboard: true
     deployment:
       enabled: true
       additionalVolumeMounts:
@@ -46,11 +44,6 @@ spec:
         protocol: TCP
         tls:
           enabled: true
-      traefik:
-        port: 9000
-        expose: true
-        exposedPort: 9000
-        protocol: TCP
     providers:
       kubernetesCRD:
         enabled: true
