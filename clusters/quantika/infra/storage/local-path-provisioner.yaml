@@ -35,7 +35,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: custom-local-path-provisioner
+  name: local-path-provisioner
   namespace: kube-system
   labels:
     app: custom-local-path-provisioner
