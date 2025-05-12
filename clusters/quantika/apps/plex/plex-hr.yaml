@@ -1,3 +1,8 @@
+apiversion: v1
+kind: namespace
+metadata:
+  name: media
+---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
