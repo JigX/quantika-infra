@@ -17,7 +17,7 @@ spec:
     - host: plex.indeweygerlings.com
       http:
         paths:
-          - path: /
+          - path: /web/
             pathType: Prefix
             backend:
               service:
