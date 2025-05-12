@@ -27,4 +27,4 @@ spec:
   volumes:
     - name: test-volume
       persistentVolumeClaim:
-        claimName: test-pvc
+        claimName: test-pvc-local
