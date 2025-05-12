@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: plex
+  namespace: media
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.tls.certresolver: cloudflare
+    external-dns.alpha.kubernetes.io/hostname: plex.indeweygerlings.com
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+    external-dns.alpha.kubernetes.io/owner-id: "quantika"
+    external-dns.alpha.kubernetes.io/target: "213.10.116.223"
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: plex.indeweygerlings.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: plex
+                port:
+                  number: 32400
+  tls:
+    - hosts:
+        - plex.indeweygerlings.com

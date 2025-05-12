@@ -4,5 +4,5 @@ resources:
   - pvc.yaml
   - deployment.yaml
   - service.yaml
-# - plex-ingress.yaml
+  - ingress.yaml
 # - plex-service.yaml
