@@ -1,44 +1,35 @@
 ---
-# 1. ConfigMap with custom path
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: local-path-config
+  name: custom-local-path-config
   namespace: kube-system
-  labels:
-    app: custom-local-path-provisioner
-  annotations:
-    managed-by: flux
-
 data:
   config.json: |
     {
-      "nodePathMap":[
+      "nodePathMap": [
         {
-          "node":"DEFAULT_PATH_FOR_NON_LISTED_NODES",
-          "paths":["/mnt/media/k8s"]
+          "node": "DEFAULT_PATH_FOR_NON_LISTED_NODES",
+          "paths": ["/mnt/media/k8s"]
         }
       ]
     }
   setup: |
     #!/bin/sh
     set -eu
-    mkdir -m 0777 -p "$VOL_DIR"
-    chmod 700 "$VOL_DIR/.."
+    mkdir -m 0777 -p "${VOL_DIR}"
+    chmod 700 "${VOL_DIR}/.."
   teardown: |
     #!/bin/sh
     set -eu
-    rm -rf "$VOL_DIR"
+    rm -rf "${VOL_DIR}"
 
 ---
-# 2. Deployment for the custom provisioner
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: local-path-provisioner
+  name: custom-local-path-provisioner
   namespace: kube-system
-  labels:
-    app: custom-local-path-provisioner
 spec:
   replicas: 1
   selector:
@@ -67,7 +58,6 @@ spec:
             name: custom-local-path-config
 
 ---
-# 3. StorageClass using this provisioner
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
