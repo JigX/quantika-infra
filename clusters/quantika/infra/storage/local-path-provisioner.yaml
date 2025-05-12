@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: custom-local-path-config
+  name: local-path-config
   namespace: kube-system
   labels:
     app: custom-local-path-provisioner
