@@ -47,12 +47,6 @@ spec:
       containers:
         - name: provisioner
           image: rancher/local-path-provisioner:v0.0.31
-          command:
-            - local-path-provisioner
-            - --config
-            - /etc/config/config.json
-            - --helper-pod
-            - /etc/config/helperPod.yaml
           volumeMounts:
             - name: config-volume
               mountPath: /etc/config/
