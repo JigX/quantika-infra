@@ -50,6 +50,13 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /etc/config/
+      command:
+        - local-path-provisioner
+        - start
+        - --config
+        - /etc/config/config.json
+        - --helper-pod
+        - /etc/config/helperPod.yaml
       volumes:
         - name: config-volume
           configMap:
