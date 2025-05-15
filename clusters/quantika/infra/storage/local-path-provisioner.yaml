@@ -63,6 +63,8 @@ spec:
             - /etc/config/config.json
             - --helper-pod
             - /etc/config/helperPod.yaml
+            - --configmap-name
+            - media-local-path-config
           volumeMounts:
             - name: config-volume
               mountPath: /etc/config/
