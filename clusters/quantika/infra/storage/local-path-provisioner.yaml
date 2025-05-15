@@ -57,8 +57,7 @@ spec:
       containers:
         - name: provisioner
           image: rancher/local-path-provisioner:v0.0.31
-          command:
-            - local-path-provisioner
+          args:
             - start
             - --config
             - /etc/config/config.json
