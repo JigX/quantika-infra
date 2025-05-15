@@ -57,14 +57,19 @@ spec:
       containers:
         - name: provisioner
           image: rancher/local-path-provisioner:v0.0.31
-          args:
+          command:
+            - local-path-provisioner
             - start
             - --config
             - /etc/config/config.json
-            - --helper-pod
+            - --helper-pod-file
             - /etc/config/helperPod.yaml
             - --configmap-name
             - media-local-path-config
+            - --service-account-name
+            - local-path-provisioner-service-account
+            - --provisioner-name
+            - media.rancher.io/local-path
           volumeMounts:
             - name: config-volume
               mountPath: /etc/config/
@@ -79,6 +84,6 @@ metadata:
   name: media-local-path
   annotations:
     storageclass.kubernetes.io/is-default-class: "false"
-provisioner: rancher.io/local-path
+provisioner: media.rancher.io/local-path
 reclaimPolicy: Delete
 volumeBindingMode: WaitForFirstConsumer
