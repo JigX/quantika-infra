@@ -9,5 +9,4 @@ resources:
   - cert-manager
   - traefik
   - pi-hole
-#  - storage # Uncomment this line to enable storage
-
+  - storage # Uncomment this line to enable storage
