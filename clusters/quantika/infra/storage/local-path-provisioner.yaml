@@ -70,6 +70,8 @@ spec:
             - media-local-path-config
             - --service-account-name
             - local-path-provisioner-service-account
+            - --namespace
+            - kube-system
           volumeMounts:
             - name: config-volume
               mountPath: /etc/config/
