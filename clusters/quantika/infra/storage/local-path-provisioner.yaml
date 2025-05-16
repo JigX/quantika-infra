@@ -21,7 +21,6 @@ data:
     kind: Pod
     metadata:
       name: helper-pod
-      namespace: kube-system
     spec:
       restartPolicy: Never
       containers:
