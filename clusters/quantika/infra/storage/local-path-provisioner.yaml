@@ -64,7 +64,7 @@ spec:
             - start
             - --config
             - /etc/config/config.json
-            - --helper-pod
+            - --helper-pod-file
             - /etc/config/helperPod.yaml
             - --configmap-name
             - media-local-path-config
