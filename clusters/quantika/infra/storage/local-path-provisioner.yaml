@@ -21,6 +21,7 @@ data:
     kind: Pod
     metadata:
       name: helper-pod
+      namespace: media
     spec:
       restartPolicy: Never
       containers:
@@ -41,7 +42,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: media-local-path-provisioner
-  namespace: kube-system
+  namespace: media
   labels:
     app: media-local-path-provisioner
 spec:
@@ -70,7 +71,7 @@ spec:
             - --service-account-name
             - local-path-provisioner-service-account
             - --namespace
-            - kube-system
+            - media
           volumeMounts:
             - name: config-volume
               mountPath: /etc/config/
