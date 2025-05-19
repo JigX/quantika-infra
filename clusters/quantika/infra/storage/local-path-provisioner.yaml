@@ -5,6 +5,12 @@ metadata:
   name: media
 ---
 apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: local-path-provisioner-service-account
+  namespace: media
+---
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: media-local-path-config
