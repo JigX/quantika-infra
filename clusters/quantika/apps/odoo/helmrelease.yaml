@@ -7,8 +7,8 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: https://charts.bitnami.com/bitnami/odoo-28.2.4.tgz
-      version: 28.2.4
+      chart: odoo
+      version: 28.1.4
       sourceRef:
         kind: HelmRepository
         name: bitnami
