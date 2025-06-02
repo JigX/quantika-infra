@@ -8,21 +8,24 @@ spec:
   chart:
     spec:
       chart: odoo
-      version: "28.2.4"
+      version: 28.2.4
       sourceRef:
         kind: HelmRepository
         name: bitnami
         namespace: flux-system
   values:
     odooUsername: admin
-    odooPassword: admin123 # <-- vervang dit door een verwijzing naar een secret
+    odooPassword: ""
     odooEmail: admin@example.com
     postgresql:
       enabled: false
     externalDatabase:
       host: odoo-postgresql.odoo.svc.cluster.local
       user: postgres
-      password: odoo123  # <-- ook deze beveiligen via secret
+      password: ""
       database: postgres
     service:
       type: ClusterIP
+  valuesFrom:
+    - secretRef:
+        name: odoo-secrets
