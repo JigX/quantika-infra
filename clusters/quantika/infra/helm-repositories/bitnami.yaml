@@ -6,3 +6,4 @@ metadata:
 spec:
   interval: 1h
   url: https://charts.bitnami.com/bitnami
+  type: helm  # ← DIT zorgt dat het geen oci repo wordt
