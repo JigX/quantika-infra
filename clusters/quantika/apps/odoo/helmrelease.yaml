@@ -15,17 +15,14 @@ spec:
         namespace: flux-system
   values:
     odooUsername: admin
-    odooPassword: ""
+    odooPassword: admin123 # <-- vervang dit door een verwijzing naar een secret
     odooEmail: admin@example.com
     postgresql:
       enabled: false
     externalDatabase:
       host: odoo-postgresql.odoo.svc.cluster.local
       user: postgres
-      password: ""
+      password: odoo123  # <-- ook deze beveiligen via secret
       database: postgres
     service:
       type: ClusterIP
-  valuesFrom:
-    - secretRef:
-        name: odoo-secrets
