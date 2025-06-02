@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: bitnami
-        namespace: flux-system
+        namespace: odoo
   values:
     odooUsername: admin
     odooPassword: admin123 # <-- vervang dit door een verwijzing naar een secret
