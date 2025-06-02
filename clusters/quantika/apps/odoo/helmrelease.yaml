@@ -15,12 +15,13 @@ spec:
         namespace: odoo
   values:
     odooUsername: admin
-    odooPassword: admin123 # <-- vervang dit door een verwijzing naar een secret
-    odooEmail: admin@example.com
+    odooPassword: VannityTest2025! # <-- vervang dit door een verwijzing naar een secret
+    odooEmail: jeffrey@indeweygerlings.com
     postgresql:
       enabled: false
     externalDatabase:
       host: odoo-postgresql.odoo.svc.cluster.local
+      port: 5432
       user: postgres
       password: odoo123  # <-- ook deze beveiligen via secret
       database: postgres
