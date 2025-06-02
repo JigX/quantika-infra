@@ -23,8 +23,9 @@ spec:
       host: odoo-postgresql.odoo.svc.cluster.local
       port: 5432
       user: postgres
-      password: odoo123  # <-- ook deze beveiligen via secret
       database: postgres
+      existingSecret: odoo-db-secret
+      existingSecretPasswordKey: postgres-password
     service:
       type: ClusterIP
     persistence:
