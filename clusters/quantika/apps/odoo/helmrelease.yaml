@@ -27,3 +27,7 @@ spec:
       database: postgres
     service:
       type: ClusterIP
+    persistence:
+      enabled: true
+      storageClass: media-local-path
+      size: 8Gi
